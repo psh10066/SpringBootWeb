@@ -16,6 +16,10 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
+group 'org.example'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
 repositories { // 각종 의존성 (라이브러리)들을 어떤 원격 저장소에서 받을지를 정함
     mavenCentral() // 기존부터 많이 사용. 많은 과정과 설정이 필요함
     jcenter() // 라이브러리 업로드 간단. jcenter -> mavenCentral 라이브러리 업로드 자동화 가능
@@ -25,5 +29,6 @@ dependencies { // 프로젝트 개발에 필요한 의존성들을 선언 ([Ctrl
     compile('org.projectlombok:lombok')
     compile('org.springframework.boot:spring-boot-starter-data-jpa') // 스프링 부트용 Spring Data Jpa 추상화 라이브러리
     compile('com.h2database:h2') // 인메모리 관계형 데이터베이스 (별도 설치없이 프로젝트 의존성만으로 관리)
+    compile('org.springframework.boot:spring-boot-starter-mustache') // 머스테치 스타터 의존성
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
